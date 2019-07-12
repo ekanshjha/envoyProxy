@@ -35,23 +35,23 @@ def render_page():
 def service(service_color):
     return render_page()
 
-@app.route('/trace/<service_color>')
-def trace(service_color):
-    headers = {}
-    ## For Propagation test ##
-    # Call service 'green' from service 'blue'
-    if (os.environ['SERVICE_NAME']) == 'blue':
-        for header in TRACE_HEADERS_TO_PROPAGATE:
-            if header in request.headers:
-                headers[header] = request.headers[header]
-        ret = requests.get("http://localhost:9000/trace/green", headers=headers)
-    # Call service 'red' from service 'green'
-    elif (os.environ['SERVICE_NAME']) == 'green':
-        for header in TRACE_HEADERS_TO_PROPAGATE:
-            if header in request.headers:
-                headers[header] = request.headers[header]
-        ret = requests.get("http://localhost:9000/trace/red", headers=headers)
-    return render_page()
+# @app.route('/trace/<service_color>')
+# def trace(service_color):
+#     headers = {}
+#     ## For Propagation test ##
+#     # Call service 'green' from service 'blue'
+#     if (os.environ['SERVICE_NAME']) == 'blue':
+#         for header in TRACE_HEADERS_TO_PROPAGATE:
+#             if header in request.headers:
+#                 headers[header] = request.headers[header]
+#         ret = requests.get("http://localhost:9000/trace/green", headers=headers)
+#     # Call service 'red' from service 'green'
+#     elif (os.environ['SERVICE_NAME']) == 'green':
+#         for header in TRACE_HEADERS_TO_PROPAGATE:
+#             if header in request.headers:
+#                 headers[header] = request.headers[header]
+#         ret = requests.get("http://localhost:9000/trace/red", headers=headers)
+#     return render_page()
 
 if __name__ == "__main__":
     app.run(host='127.0.0.1', port=8080, debug=True)
