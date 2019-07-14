@@ -95,7 +95,7 @@ $ open http://localhost:8000/service/blue
 $ curl -s -v http://localhost:8000/service/blue
 ```
 
-Access serivce_green and check if gree background page is displayed
+Access serivce_green and check if green background page is displayed
 ```
 $ open http://localhost:8000/service/green
 # or
