@@ -67,13 +67,13 @@ C:\test\envoy-proxy-demos\httproute-simple-match>docker logs httproute-simple-ma
 /bin/sh: /usr/local/bin/start_service.sh: not found
 ```
 
-When you see this, most probably it's because the file format on windows not compatible with linux. 
+> When you see this, most probably it's because the file format on windows not compatible with linux. 
 For your scenario, to make all things work, you need do next:
 
-After git clone the source code, modify `envoy-proxy-demos/apps/service.py`, add `#!/usr/bin/python3` to 
+> After git clone the source code, modify `envoy-proxy-demos/apps/service.py`, add `#!/usr/bin/python3` to 
 the start of this file(In this file it's already added).
 
-With powershell's help, enter into envoyProxy/apps, change following files format from dos to unix as next:
+With powershell's help, enter into `envoyProxy/apps`, change following files format from dos to unix as next:
 
 ```
 $ dos2unix start_service.sh service.py
