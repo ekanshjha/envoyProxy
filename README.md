@@ -26,7 +26,7 @@ A simple way to achieve this is via the Docker Toolbox.
 ### Step 2: Clone the repo, and start all of the containers.
 
 ```
-$ git clone https://github.com/ekansh/envoyProxy.git
+$ git clone https://github.com/ekanshjha/envoyProxy.git
 $ cd envoyProxy/httproute-simple-match
 ```
 
